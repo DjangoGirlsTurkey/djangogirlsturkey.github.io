@@ -45,14 +45,16 @@ Bir kez daha: sayfaya bir bağlantı, bir URL, bir view ve bir template üretece
 Şimdi `blog/templates/blog/base.html` şablonunu açma zamanı. Öncelikle `page-header` adlı `div` öğesinin içine bir bağlantı ekleyeceğiz:
 
     html
+    {% raw %}
     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    
+    {% endraw %}
 
 Yeni view'i `post_new` olarak isimlendirdik.
 
 Yukarıdaki satırı ekledikten sonra html dosyanız böyle görünmeli:
 
     html
+    {% raw %}
     {% load staticfiles %}
     <html>
         <head>
@@ -77,7 +79,7 @@ Yukarıdaki satırı ekledikten sonra html dosyanız böyle görünmeli:
             </div>
         </body>
     </html>
-    
+    {% endraw %}
 
 Dokümanı kaydedip http://127.0.0.1:8000 sayfasını yeniledikten sonra, siz de tanıdık `NoReverseMatch` hatasını görüyor olmalısınız, değil mi?
 
@@ -265,12 +267,14 @@ Artık yeni bir form oluşturmayı biliyoruz. Peki, mevcut bir formu güncelleme
 `blog/templates/blog/post_detail.html` dosyasını açıp şu satırı ekleyelim:
 
     python
+    {% raw %}
     <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-    
+    {% endraw %}
 
 ki template buna benzesin:
 
     html
+    {% raw %}
     {% extends 'blog/base.html' %}
     
     {% block content %}
@@ -285,7 +289,7 @@ ki template buna benzesin:
             <p>{{ post.yazi|linebreaks }}</p>
         </div>
     {% endblock %}
-    
+    {% endraw %}
 
 `blog/urls.py` dosyasına şu satırı ekleyelim:
 
@@ -350,16 +354,18 @@ Bir bağlantıya (link) tıklayarak yeni bir blog oluşturabilmek harika! Ancak,
 `blog/templates/blog/base.html` dosyasında yarattığımız `page-header` `div` ve anchor etiketlerini (tags) bulalım. Şuna benziyor olmalı:
 
     html
+    {% raw %}
     <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-    
+    {% endraw %}
 
 Şimdi bir `{% if %}` etiketi daha ekleyeceğiz ki link sadece admin olarak oturum açmış kişilere görünsün. Şimdilik, bu kişi sadece sensin! `<a>` etiketini şöyle değiştirelim:
 
     html
+    {% raw %}
     {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     {% endif %}
-    
+    {% endraw %}
 
 Bu `{% if %}` linkin tarayıcıya ancak kullanıcı oturum açmış ise gönderilmesini sağlar. Bu yeni post yaratılmasını kesin olarak engellemese de iyi bir başlangıç. Güvenlik konusu ek derslerde daha çok ele alınacak.
 
