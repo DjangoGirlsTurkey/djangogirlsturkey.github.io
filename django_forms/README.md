@@ -271,6 +271,7 @@ Artık yeni bir form oluşturmayı biliyoruz. Peki, mevcut bir formu güncelleme
 ki template buna benzesin:
 
     html
+    {% raw %}
     {% extends 'blog/base.html' %}
     
     {% block content %}
@@ -285,7 +286,7 @@ ki template buna benzesin:
             <p>{{ post.yazi|linebreaks }}</p>
         </div>
     {% endblock %}
-    
+    {% endraw %}
 
 `blog/urls.py` dosyasına şu satırı ekleyelim:
 
