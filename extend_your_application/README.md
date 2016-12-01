@@ -13,7 +13,6 @@ Halihazırda bir `Post` modelimiz var, dolayısıyla `models.py` dosyasına bir 
 `blog/templates/blog/post_list.html` dosyasına bir link (bağlantı) ekleyerek başlayacağız. Şu ana kadar yaptıklarımızın şöyle gözüküyor olması lazım:
 
     html
-    {% raw %}
     {% extends 'blog/base.html' %}
     
     {% block content %}
@@ -27,7 +26,7 @@ Halihazırda bir `Post` modelimiz var, dolayısıyla `models.py` dosyasına bir 
             </div>
         {% endfor %}
     {% endblock content %}
-    {% endraw %}
+    
     
 
 {% raw %}Gönderi listesindeki bir gönderinin başlığından bir gönderinin detay sayfasına bir link (bağlantı) olsun istiyoruz. `<h1><a href="">{{ post.baslik }}</a></h1>`'i gönderinin detay sayfasına link verecek şekilde değiştirelim:{% endraw %}
@@ -123,7 +122,7 @@ Of hayır! Başka bir hata! Ama onu nasıl halledeceğimizi biliyoruz, di mi? Bi
 `blog/templates/blog` dizininde `post_detail.html` adında bir dosya oluşturacağız.
 
 Şöyle görünmeli:
-{% raw %}
+
     html
     {% extends 'blog/base.html' %}
     
@@ -138,7 +137,7 @@ Of hayır! Başka bir hata! Ama onu nasıl halledeceğimizi biliyoruz, di mi? Bi
             <p>{{ post.yazi|linebreaks }}</p>
         </div>
     {% endblock %}
-{% endraw %}    
+    
 
 Bir kere daha `base.html` dosyasını genişleteceğiz. `content` bloğunda bir gönderinin varsa yayınlama tarihini , başlığını ve metnini göstermek istiyoruz. Ama daha önemli şeyleri konuşmalıyız, değil mi?
 

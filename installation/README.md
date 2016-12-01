@@ -47,4 +47,3 @@ Tebrikler, ayarlarınız tamam ve hazırsınız! Eğer atölyeden önce hala vak
   * [Python'a giriş](../intro_to_command_line/README.md)
 
   * [Django nedir?](../django/README.md)
-  

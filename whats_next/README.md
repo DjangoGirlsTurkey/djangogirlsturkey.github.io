@@ -1,6 +1,6 @@
 # Sırada ne var?
 
-Kendini tebrik et! **Kesinlikle harikasın**. Seninle gurur duyuyoruz! <3 
+Kendini tebrik et! **Kesinlikle harikasın**. Seninle gurur duyuyoruz! <3
 
 ### Şimdi ne yapmak gerek?
 
