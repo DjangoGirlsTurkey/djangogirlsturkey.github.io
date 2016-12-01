@@ -138,6 +138,7 @@ Yeni bir `Post` formu oluşturmak için `PostForm()` fonksiyonunu çağırmak ve
 Peki, şimdi de `post_edit.html` in içindeki HTML kodunun nasıl görünmesi gerektiğine bakalım:
 
     html
+    {% raw %}
     {% extends 'blog/base.html' %}
     
     {% block content %}
@@ -147,7 +148,7 @@ Peki, şimdi de `post_edit.html` in içindeki HTML kodunun nasıl görünmesi ge
             <button type="submit" class="save btn btn-default">Kaydet</button>
         </form>
     {% endblock %}
-    
+    {% endraw %}
 
 Yenileme zamanı! Hey! Formun görüntülendi!
 
